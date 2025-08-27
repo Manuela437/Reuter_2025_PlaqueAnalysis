@@ -1,0 +1,39 @@
+This folder contains the R script "Reuter_et_al_2025_Data_analysis.html" with the code used to analyse and visualise phage counting and plaque morphology data in the publication "Single capsid mutations modulating phage adsorption, persistence, and plaque morphology shape evolutionary trajectories in PhiX174" by Reuter et al. 2025.
+The code was used to generate figures Fig. 3, Fig. 4D, Fig. 5B and supplementary figures Fig. S2A, Fig. S3, Fig. S4, Fig. S6, Fig. S7, and Fig. S8.
+R packages used in the code are found at the beginning of the stript.
+Data sets used in the R script are found in Zenodo under (REF)
+Indiviudal sections of the code starting with "Experiment" and a consecutive number refer to individual experiments and assays which were analysed in this project.
+At the beginning of each "Experiment" section, we included a "READ ME" part, specifying the columns of the corresponding dataset.
+
+In the following, each "Experiment" and its corresponding datasets are listed:
+
+Experiment 1: 3-hour transfer regime
+-> Analysis of bacteria and phage counts during the 3-hour transfer regime for five independent selection lines all starting from the ancestral phage phenotype of phage PhiX174
+Two data sets were used in this section
+- Data set 1: "experiment_1_3_h_transfers.csv" contains phage plaque and bacteria colony counts for each 3-hour transfer in all five selection lines. This dataset was used to monitor the MOI input for each transfer. The plots generated under this section were not used in figures of the publication.
+- Data set 2: "experiment_1_3_h_transfers_small_plaque_frequency" contains plaque counts of verified small plaques compared to the total number of plaques. This data was used to estimate the frequency of small-plaque-forming mutants compared to the ancestor at the transfer, at which the first heritable small-plaque phenotype was detected. The code was used to make supplementary figure Fig. S2A.
+
+Experiment 2: 30-min transfer regime
+-> Analysis of bacteria and phage counts during the 30-min transfer regime for five independent selection lines all starting from the ancestral phage phenotype of phage PhiX174
+- Data set: "experiment_2_30_min_transfers.csv" contains phage plaque or spot counts and bacteria counts for each 30-min transfer for five selection lines. The experiment was done for ten passage days, each passage consisting of four 30-min (transfers T1-T4) and one 3-hour (T5) transfer. For transfer T1-T4 on each day, spot tests were done to monitor the MOI input, for transfer T5, plaque assays were done after isolation of phage particles by chloroform extraction. The code was not used to generate any figure in the publication.
+
+Experiment 3: Adsorption constant analysis
+-> Analysis of adsortpion dynamics of ancestor, large-plaque-forming mutant F(T101A), and small-plaque mutants F(G322D) and F(S427*). The code was used to get the slope estimate of the adsorption curves, calculation the adsorption constant of each phage genotype and consecutive statistical analysis to test for significant differences. The code was used to generate figure Fig. 3A and supplementary figure Fig. S7.
+- Data set: "experiment_3_adsorption_assay.csv" coontains bacteria colony-forming unit and plaque counts during a 6 minute adsorption period. 
+
+Experiment 4: Image analysis of plaque assays
+-> Analysis of plauque morphology, i.e. plaque area and turbidity of lysis plaques imaged from a plaque assay plate for the phage ancestor and mutants F(T101A), F(G322D), and F(S427*). The code was used to generate figure Fig. 3B and supplementary figure Fig. S4.
+- Data set: "experiment_4_plaque_image_analysis.csv"
+
+Eperiment 5: Free phage transferred during 30-min transfer experiment
+-> Quantification of free phage particles of ancestral phage PhiX174 and large-plaque-forming, slow adsorbing mutant F(T101A) to test the model prediction, that slow adsorbers are present at higher rates as free phages compared to faster adsorbers at the moment of transfer. The code was used to generate figure Fig. 4D.
+- Data set: "experiment_5_30min_free_phages.csv"
+
+Experiment 6: Decay analysis 
+-> Quantification of phage population dynamcis with special focus on the decay period during long (<3 hours) infection times of the phage ancestor and mutants F(T101A), F(G322D), F(S427*). Code was used to generate figure Fig. 5B and supplementary figure Fig. S6.
+- Data set: "experiment_6_decay_analysis.csv"
+
+Experiment 7: One-step growth curve of ancestral phage  
+-> Analysis of the one-step growth curve assay done on ancestral phage PhiX174 to estimate burst size and lysis time. The code was used to generate supplementary figure Fig. S3
+- Data set: "experiment_7_OSGC_WT_csv" contains phage and bacteria counts during the eclise and rise phase of the one-step growth curve after a 6-minute adsorption periode. Produced phage particles were normalized for free phages at time point t=0 min by substracting free phages at t=0 min from free phage counts of each consective time point. Calculations for columns that include burst size estimations are specified in the "READ ME" part at the beginning of the corresponding code.
+
